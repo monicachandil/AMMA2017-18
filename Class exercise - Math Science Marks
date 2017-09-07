@@ -1,0 +1,36 @@
+stud.df <- data.frame(Name <- c(head(LETTERS,5)), 
+                       Age <- c(23,22,21,25,20),
+                       Math_marks <- c(87,86,89,88,79),
+                       Science_marks <- c(65,87,78,55,93))
+
+stud.df$Total_marks<-stud.df$Math_marks....c.87..86..89..88..79.+stud.df$Science_marks....c.65..87..78..55..93.
+
+stud.df$Percent_Math <-(stud.df$Math_marks....c.87..86..89..88..79./stud.df$Total_marks....stud.df.Math_marks....c.87..86..89..88..79....)*100
+
+stud.df$Percent_Science <-(stud.df$Science_marks....c.65..87..78..55..93./stud.df$Total_marks....stud.df.Math_marks....c.87..86..89..88..79....)*100
+
+
+View(stud.df)
+
+student2 <- stud.df[c(2:7)] 
+student2 <- stud.df[,-1]
+## adding some transformed columns to student.df
+stud.df$log_age<-log(stud.df$Age....c.23..22..21..25..20.)
+stud.df$exp_age<-exp(stud.df$Age....c.23..22..21..25..20./mean(stud.df$Age....c.23..22..21..25..20.))
+stud.df$inv_age<-1/(stud.df$Age....c.23..22..21..25..20.)
+stud.df$sqr_age<-(stud.df$Age....c.23..22..21..25..20.)*(stud.df$Age....c.23..22..21..25..20.)
+stud.df$sqrt_age<-sqrt(stud.df$Age....c.23..22..21..25..20.)
+
+##changing from numeric to character
+stud.df$log_age<-as.character(stud.df$log_age)
+class(stud.df$log_age)
+
+View(stud.df)
+
+s1<-stud.df[stud.df$Age>=23,]
+View(s1)
+
+?sample
+
+sample_index<-sample(1:nrow(stud.df),3,replace=F)
+View(student2)
